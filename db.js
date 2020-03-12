@@ -5,7 +5,7 @@ const DB_PATH = "./coupon.db";
 var dbSchema = `CREATE TABLE IF NOT EXISTS produit (
     id INTEGER PRIMARY KEY, 
     libelle TEXT, 
-    handle TEXT, 
+    url TEXT, 
     description TEXT);
 
     CREATE TABLE IF NOT EXISTS coupon (
@@ -39,7 +39,7 @@ const initDB = () => {
             console.log(err);
         }
     });
-    db.all("SELECT id, libelle, handle, description FROM produit", (err, row) => {
+    db.all("SELECT id, libelle, url, description FROM produit", (err, row) => {
         if (err) {
             console.log(err);
         } else {
@@ -49,13 +49,31 @@ const initDB = () => {
                     {
                         id: 1,
                         libelle: "SkateBoard",
-                        handle: "ezhfncz",
-                        description: "lollol"
+                        url: "ezhfncz",
+                        description: "petit skateboard des familles"
                     },
                     {
                         id: 2,
+                        libelle: "Jogging",
+                        url: "ezhfncz",
+                        description: "pour faire des petits jogging des familles"
+                    },
+                    {
+                        id: 3,
+                        libelle: "Vélo",
+                        url: "ezhfncz",
+                        description: "lollol"
+                    },
+                    {
+                        id: 4,
+                        libelle: "Surf",
+                        url: "ezhfncz",
+                        description: "lollol"
+                    },
+                    {
+                        id: 5,
                         libelle: "Bonnet",
-                        handle: "ezJKfncz",
+                        url: "ezJKfncz",
                         description: "lokrfllol"
                     }
                 ];
@@ -63,7 +81,7 @@ const initDB = () => {
                     stmt.run(
                         obj[i].id,
                         obj[i].libelle,
-                        obj[i].handle,
+                        obj[i].url,
                         obj[i].description
                     );
                 }
