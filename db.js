@@ -92,7 +92,7 @@ const initDB = () => {
                         id: 1,
                         libelle: "REDUCTION SKATEBOARDS",
                         description: "REDUCTION DE MALADE POUR LES SKATEBOARDS -30%",
-                        dateDebut: new Date(),
+                        dateDebut: new Date()+1,
                         dateFin: new Date(),
                         idProduit: 1
                     },
@@ -137,49 +137,6 @@ const initDB = () => {
             }
         }
     });
-    /*db.all(
-        "SELECT id, libelle, description, dateDebut, dateFin, idProduit FROM coupon",
-        (err, row) => {
-            if (err) {
-                console.log(err);
-            } else {
-                if (row.length === 0) {
-                    var stmt = db.prepare("INSERT INTO coupon VALUES (?, ?, ?, ?, ?, ?)");
-                    var obj = [
-                        {
-                            id: 1,
-                            libelle: "reducdeouf",
-                            description: "LastName",
-                            dateDebut: "01/01/2020",
-                            dateFin: "01/02/2020",
-                            idProduit: 6
-                        },
-                        {
-                            id: 2,
-                            libelle: "reducpastropouf",
-                            description: "LastName",
-                            dateDebut: "01/01/2020",
-                            dateFin: "01/02/2020",
-                            idProduit: 6
-                        }
-                    ];
-                    for (var i in obj) {
-                        stmt.run(
-                            obj[i].id,
-                            obj[i].libelle,
-                            obj[i].description,
-                            obj[i].dateDebut,
-                            obj[i].dateFin,
-                            obj[i].idProduit
-                        );
-                    }
-                    stmt.finalize();
-                } else {
-                    console.log("Database already exists");
-                }
-            }
-        }
-    );*/
 };
 
 module.exports = initDB;
