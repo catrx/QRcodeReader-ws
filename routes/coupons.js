@@ -25,7 +25,13 @@ router.get('/:id', (req, res, next) => {
         if (err) {
             res.status(400).json(err);
         } else {
-            res.json(rows);
+            if(rows) {
+                const product = new ProductModel(rows.idProduit, rows.libelleProduit, rows.url, rows.produitDescription);
+                const coupon = new CouponModel(rows.id, rows.libelle, rows.description, rows.dateFin, product);
+                res.json(coupon);
+            } else {
+                res.json({});
+            }
         }
     });
 });

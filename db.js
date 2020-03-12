@@ -47,7 +47,7 @@ const initDB = () => {
                 var stmt = db.prepare("INSERT INTO produit VALUES (?, ?, ?, ?)");
                 var obj = [
                     {
-                        id: 6,
+                        id: 1,
                         libelle: "SkateBoard",
                         url: "ezhfncz",
                         description: "petit skateboard des familles"
@@ -94,7 +94,7 @@ const initDB = () => {
                         description: "LastName",
                         dateDebut: "01/01/2020",
                         dateFin: "01/02/2020",
-                        idProduit: 6
+                        idProduit: 1
                     },
                     {
                         id: 2,
