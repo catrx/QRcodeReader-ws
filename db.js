@@ -11,9 +11,9 @@ var dbSchema = `CREATE TABLE IF NOT EXISTS produit (
     CREATE TABLE IF NOT EXISTS coupon (
     id INTEGER PRIMARY KEY, 
     libelle TEXT, 
-    description TEXT, 
-    dateDebut TEXT, 
-    dateFin TEXT, 
+    description TEXT,
+    dateDebut DATETIME,
+    dateFin DATETIME, 
     idProduit INTEGER, 
     FOREIGN KEY(idProduit) REFERENCES produit(id)
     )`;
@@ -49,32 +49,32 @@ const initDB = () => {
                     {
                         id: 1,
                         libelle: "SkateBoard",
-                        url: "ezhfncz",
+                        url: "https://www.gifi.fr/media/catalog/product/cache/1/image/1000x/9df78eab33525d08d6e5fb8d27136e95/5/4/549274.jpg",
                         description: "petit skateboard des familles"
                     },
                     {
                         id: 2,
-                        libelle: "Jogging",
-                        url: "ezhfncz",
-                        description: "pour faire des petits jogging des familles"
+                        libelle: "Jogging PSG",
+                        url: "https://www.footkorner.com/media/catalog/product/cache/1/image/600x/9df78eab33525d08d6e5fb8d27136e95/f/o/footkorner-survetement-psg-blanc-bleu-2019-2020-at3093-100.jpg",
+                        description: "pour faire des petits jogging des familles, ALLEZ PARIS !!"
                     },
                     {
                         id: 3,
                         libelle: "Vélo",
-                        url: "ezhfncz",
-                        description: "lollol"
+                        url: "https://cdn.futura-sciences.com/buildsv6/images/largeoriginal/d/2/b/d2baa29159_50154508_skoda-klement-4.jpg",
+                        description: "Pour de belles randonnées !!"
                     },
                     {
                         id: 4,
-                        libelle: "Surf",
-                        url: "ezhfncz",
-                        description: "lollol"
+                        libelle: "Nike Air Vapormax",
+                        url: "https://c.static-nike.com/a/images/t_PDP_1280_v1/f_auto/tzmbw4poatl4g2bt88ym/chaussure-air-vapormax-flyknit-utility-K39FLM.jpg",
+                        description: "Pour courir plus vite que la lumière!"
                     },
                     {
                         id: 5,
                         libelle: "Bonnet",
-                        url: "ezJKfncz",
-                        description: "lokrfllol"
+                        url: "https://cdn.leslipfrancais.fr/23182-product_medium_2x/le-indispensable-marine-bonnet-marine.jpg",
+                        description: "Quand il fait froid !"
                     }
                 ];
                 for (var i in obj) {
@@ -90,19 +90,35 @@ const initDB = () => {
                 obj = [
                     {
                         id: 1,
-                        libelle: "reducdeouf",
-                        description: "LastName",
-                        dateDebut: "01/01/2020",
-                        dateFin: "01/02/2020",
+                        libelle: "REDUCTION SKATEBOARDS",
+                        description: "REDUCTION DE MALADE POUR LES SKATEBOARDS -30%",
+                        dateDebut: new Date(),
+                        dateFin: new Date(),
                         idProduit: 1
                     },
                     {
                         id: 2,
-                        libelle: "reducpastropouf",
-                        description: "LastName",
-                        dateDebut: "01/01/2020",
-                        dateFin: "01/02/2020",
+                        libelle: "REDUC PSG",
+                        description: "REDUC A NE PAS MANQUER POUR LA VICTOIRE DU PSG !! -50%",
+                        dateDebut: new Date(),
+                        dateFin: new Date(),
                         idProduit: 2
+                    },
+                    {
+                        id: 3,
+                        libelle: "REDUCTION CHAUSSURE NIKE",
+                        description: "NIKE VAPOR MAX A -20%",
+                        dateDebut: new Date(),
+                        dateFin: new Date(),
+                        idProduit: 3
+                    },
+                    {
+                        id: 4,
+                        libelle: "A VA FAIRE FROID ",
+                        description: "C'EST L'HIVER -30% SUR TOUT LES BONNETS",
+                        dateDebut: new Date(),
+                        dateFin: new Date(),
+                        idProduit: 4
                     }
                 ];
                 for (var z in obj) {
