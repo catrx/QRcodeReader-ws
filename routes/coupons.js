@@ -30,7 +30,7 @@ router.get('/:id', (req, res, next) => {
                 const coupon = new CouponModel(rows.id, rows.libelle, rows.description, rows.dateFin, product);
                 res.json(coupon);
             } else {
-                res.json({});
+                res.status(404).json({status: 404, message: 'Aucun coupon trouvé'})
             }
         }
     });
